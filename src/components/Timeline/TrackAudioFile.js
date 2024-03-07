@@ -1,23 +1,14 @@
-import { useSortable } from '@dnd-kit/sortable'
+
 import React from 'react'
-import {CSS} from '@dnd-kit/utilities'
 
-const TrackAudioFile = ({audioItem}) => {
-    const {
-        attributes,
-        listeners,
-        setNodeRef,
-        transform,
-        transition,
-    } = useSortable({id: audioItem.id});
 
-  const style = {
-    transform: CSS.transform.toString(transform),
-    transition,
-  }
+const TrackAudioFile = ({audioItem,trackItem}) => {
+    
+console.log(999,trackItem);
+
   return (
-    <span key={audioItem.audioId} ref={setNodeRef} style={style} {...attributes} {...listeners}>{`audioItemId${audioItem.audioId} `}
-   { audioItem.id}
+    <span key={audioItem.audioId} className='border-8 border-sky-500 bg-gray-500'>
+       { audioItem.name}
     </span>
   )
 }

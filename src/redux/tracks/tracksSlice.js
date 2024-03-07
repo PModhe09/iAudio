@@ -48,6 +48,7 @@ const trackSlice = createSlice({
               return audioFiles.concat(track.audioFiles);
             }, []);
           },
+
         selectTracks: (state) => state,
     },
 });
@@ -57,6 +58,6 @@ const removeAudioFromTrack = (payload) => ({
     payload,
 });
 
-export const { createTrack, deleteTrack, addAudioToTrack,selectAudioFilesInsideTracks, selectTracks } = trackSlice.actions;
+export const { createTrack, deleteTrack, addAudioToTrack,selectAudioFilesInsideTracks, selectTracks,reorderAudioInTrack } = trackSlice.actions;
 
 export default trackSlice.reducer;
