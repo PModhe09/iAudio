@@ -32,10 +32,11 @@ const TrackItem = ({ trackItem }) => {
       {console.log(47, trackItem.trackId)}
       <span>{`trackId${trackItem.trackId}: `}</span>
       {Array.isArray(trackItem.audioFiles) && trackItem.audioFiles.length > 0 && (
-        trackItem.audioFiles.map((audioItem) => (
-          <TrackAudioFile key={audioItem.id} audioItem={audioItem} trackItem={trackItem}/>
-        ))
-      )}
+    trackItem.audioFiles.map((audioItem) => (
+      <TrackAudioFile key={audioItem.id} audioItem={audioItem} trackItem={trackItem} />
+    ))
+
+)}
       <button onClick={() => handleDeleteTrack(trackItem.trackId)} className='ml-auto mr-5'>
         Del Track
       </button>

@@ -1,16 +1,20 @@
+import React from 'react';
+import { useDrag } from 'react-dnd';
+import { ItemTypes } from "../LeftAside/ItemTypes";
 
-import React from 'react'
+const TrackAudioFile = ({ audioItem, trackItem }) => {
+  const [, drag] = useDrag({
+    type: ItemTypes.AUDIO,
+    item: { audioFile: audioItem },
+  });
 
-
-const TrackAudioFile = ({audioItem,trackItem}) => {
-    
-console.log(999,trackItem);
+  console.log('audioItem:', audioItem);
 
   return (
-    <span key={audioItem.audioId} className='border-8 border-sky-500 bg-gray-500'>
-       { audioItem.name}
+    <span key={audioItem.id} ref={drag} className='border-8 border-sky-500 bg-gray-500'>
+      {audioItem.name}
     </span>
-  )
-}
+  );
+};
 
-export default TrackAudioFile
+export default TrackAudioFile;
